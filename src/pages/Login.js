@@ -15,14 +15,10 @@ class LoginSalesforce
     await this.page.goto('https://login.salesforce.com/?locale=uk');
   
  }
- async enterUsername(username)
+
+ async enterCredentials(username,password)
  {
     await  this.usernameInput.fill(username);
-    
- }
- async enterPassword(password)
- {
-
     await this.passwordInput.waitFor({ state: 'visible' });
     await this.passwordInput.fill(password);
     await this.loginButton.click();
@@ -32,8 +28,7 @@ class LoginSalesforce
  {
 
     await this.goToUrl();
-    await this.enterUsername(username);
-    await this.enterPassword(password);
+    await this.enterCredentials(username,password);
     await this.page.pause();
     
  }
