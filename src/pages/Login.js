@@ -1,4 +1,10 @@
 const { expect } = require("@playwright/test");
+//importing env 
+// import dotenv from 'dotenv';
+// dotenv.config();
+// import path from 'path';
+
+// dotenv.config({ path: path.resolve(__dirname, 'src/config/.env') });
 
 class LoginSalesforce
 {
@@ -12,15 +18,15 @@ class LoginSalesforce
 
  async goToUrl()
  {
-    await this.page.goto('https://login.salesforce.com/?locale=uk');
-  
+    await this.page.goto(process.env.BASEURL);
+      
  }
 
  async enterCredentials(username,password)
  {
-    await  this.usernameInput.fill(username);
+    await  this.usernameInput.fill(process.env.UNAME);
     await this.passwordInput.waitFor({ state: 'visible' });
-    await this.passwordInput.fill(password);
+    await this.passwordInput.fill(process.env.PASSWORD);
     await this.loginButton.click();
  }
  
