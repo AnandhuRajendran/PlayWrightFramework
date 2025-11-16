@@ -1,4 +1,6 @@
 const { expect } = require("@playwright/test");
+const { /*encryptCredentials,*/ decryptCredentials } = require("./crypto.js");
+
 //importing env 
 // import dotenv from 'dotenv';
 // dotenv.config();
@@ -22,11 +24,19 @@ class LoginSalesforce
       
  }
 
- async enterCredentials(username,password)
+ async enterCredentials()
  {
-    await  this.usernameInput.fill(process.env.UNAME);
+  
+   //  const encryptedUname = process.env.UNAME_ENC;
+   //  const encryptedPassword = process.env.PASSWORD_ENC;
+      
+    const username = decryptCredentials( process.env.UNAME);
+    const password = decryptCredentials(process.env.PASSWORD);
+
+    await this.usernameInput.fill(username);
     await this.passwordInput.waitFor({ state: 'visible' });
-    await this.passwordInput.fill(process.env.PASSWORD);
+    await this.passwordInput.fill(password);
+    await this.page.waitForTimeout(3000);
     await this.loginButton.click();
  }
  
@@ -45,5 +55,6 @@ class LoginSalesforce
     await expect(this.page).toHaveTitle('Lightning Experience | Salesforce');
     console.log("Verified the title");
  }
+
 }
 module.exports= {LoginSalesforce};
