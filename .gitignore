@@ -4,9 +4,7 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
-
-# Environment variables
-.env
+src/config/.env
 
 # Optional: ignore example logs
 *.log
