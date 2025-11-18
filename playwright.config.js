@@ -48,7 +48,6 @@ export default defineConfig({
         viewport: { width: 1536, height: 864}, 
 
       },
-      
     },
 
     // {

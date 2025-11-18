@@ -13,9 +13,9 @@ class LoginSalesforce
  constructor(page){
 
     this.page=page;
-    this.usernameInput= page.locator("#username");
-    this.passwordInput= page.locator("#password");
-    this.loginButton= page.locator("#Login");
+    this.usernameInput= page.locator('input[name="username"]');
+    this.passwordInput= page.locator('input[name="password"]');
+    this.loginButton= page.locator('button[type="submit"]');
  }
 
  async goToUrl()
@@ -52,7 +52,7 @@ class LoginSalesforce
  async validateTitle(){
 
     const title= await this.page.title();
-    await expect(this.page).toHaveTitle('Lightning Experience | Salesforce');
+    await expect(this.page).toHaveTitle('OrangeHRM');
     console.log("Verified the title");
  }
 
