@@ -1,5 +1,5 @@
-const {test,expect } = require("@playwright/test");
-const {LoginSalesforce}= require('../pages/Login.js')
+const { test, expect } = require("@playwright/test");
+const { LoginOrangeHRM } = require('../utilities/Login.js')
 
 //importing env 
 // import dotenv from 'dotenv';
@@ -8,14 +8,11 @@ const {LoginSalesforce}= require('../pages/Login.js')
 
 // dotenv.config({ path: path.resolve(__dirname, './src/config', '.env') });
 
-test("validateLogin", async function ({page})   
-{
+test("validateLogin", async function ({ page }) {
 
-const loginPage= new LoginSalesforce(page);
+    const loginPage = new LoginOrangeHRM(page);
 
-await console.log(process.env.UNAME, process.env.PASSWORD);
-await loginPage.login(process.env.UNAME, process.env.PASSWORD);
-await loginPage.validateTitle();
+    await loginPage.login(process.env.UNAME, process.env.PASSWORD);
+    await loginPage.validateTitle();
 
-    
 })
