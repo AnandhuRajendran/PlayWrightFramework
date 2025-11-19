@@ -1,3 +1,5 @@
+const { expect } = require('@playwright/test');
+
 class ActionKeywords
 {
  constructor (page)
@@ -14,6 +16,16 @@ class ActionKeywords
  {
 
     await locator.waitFor({ state: 'visible' });
+ }
+
+ async inputText(locator, text)
+ {
+   await locator.fill(text);
+ }
+
+ async verifyText(locator, text)
+ {
+   await expect(locator.filter({ hasText: text })).toContainText;
  }
 
 }

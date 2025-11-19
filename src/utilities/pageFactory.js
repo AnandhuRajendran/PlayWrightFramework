@@ -11,6 +11,8 @@ class pageFactory {
     //Homepage Locators
 
         this.search = this.page.getByPlaceholder("Search");
+        this.Maintenance= this.page.getByText("Maintenance");
+        this.PurgeER= this.page.getByText("Purge Employee Records");
     }
 }
 
