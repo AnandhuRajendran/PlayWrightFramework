@@ -9,7 +9,10 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
-     ENV_FILE: ${{ secrets.ENV_FILE }}
+     BASEURL: ${{ secrets.BASEURL }}
+     UNAME: ${{ secrets.UNAME }}
+     PASSWORD: ${{ secrets.PASSWORD }}
+     SECRET_KEY: ${{ secrets.SECRET_KEY }}
     steps:
     - uses: actions/checkout@v5
     - uses: actions/setup-node@v5
