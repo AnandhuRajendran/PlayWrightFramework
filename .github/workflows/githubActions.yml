@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
-     BASEURL: ${{ secrets.BASEURL}}
+     BASEURL: ${{ secrets.BASEURL }}
      UNAME: ${{ secrets.UNAME}}
      PASSWORD: ${{ secrets.PASSWORD}}
      SECRET_KEY: ${{ secrets.SECRET_KEY}}
@@ -23,7 +23,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run:  npx playwright test src/tests/homepage.spec.js
+      run:  npx playwright test 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
