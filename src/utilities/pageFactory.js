@@ -19,7 +19,10 @@ class pageFactory {
         
     //Add User
 
-        this.userRole_ddl= this.page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[1]/div/div[2]/div/div');
+        this.userRole_ddl= this.page.locator('(//*[@class="oxd-select-text oxd-select-text--active"])[1]');
+        this.userRole_Admin= this.page.locator("div.oxd-select-dropdown >> text=Admin");
+
+        
     }
 }
 

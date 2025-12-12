@@ -34,9 +34,32 @@ class ActionKeywords {
     await locator.scrollToElement();
   }
 
-  async dropDown(locator, value) {
+  //Drop down List 
+
+  //1. Select by Visible Text
+  async ddl_SelectByLabel(locator, visibleText) {
+  await locator.selectOption({label: visibleText});
+  }
+
+  //2. Select by Value
+  async ddl_SelectByValue(locator, value) {
   await locator.selectOption(value);
-}
+  }
+
+  //3. Select by Index
+  async ddl_SelectByIndex(locator, index_value) {
+  await locator.selectOption({index: index_value});
+  }
+
+  //4. Custom DDL (Not having <select> tag)
+  async selectFromCustomDDL(locator, ddllocator) {
+  await locator.click(); // open dropdown
+  await ddllocator.waitFor({ state: 'visible' });
+  await ddllocator.click();
+  }
+
+
+
 
   /*****************Keyboard Actions**************** */
   async fillText(locator, text) {
