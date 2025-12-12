@@ -21,6 +21,9 @@ await page.waitForSelector('text=admin');
 await action.click(factory.adminMenu);
 await action.click(factory.addUser_btn);
 await action.selectFromCustomDDL(factory.userRole_ddl, factory.userRole_Admin);
+await action.selectFromCustomDDL(factory.userStatus_ddl, factory.userStatus_Enabled);
+await action.click(factory.employeeName_txt)
+await factory.employeeName_txt.fill("David");
 
 
 await page.pause();

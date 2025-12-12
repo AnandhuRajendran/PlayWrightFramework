@@ -22,6 +22,12 @@ class pageFactory {
         this.userRole_ddl= this.page.locator('(//*[@class="oxd-select-text oxd-select-text--active"])[1]');
         this.userRole_Admin= this.page.locator("div.oxd-select-dropdown >> text=Admin");
 
+        this.userStatus_ddl= this.page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div/div');
+        this.userStatus_Enabled= this.page.locator("div.oxd-select-dropdown >> text=Enabled");
+        this.employeeName_txt= this.page.getByPlaceholder("Type for hints...");
+
+        
+
         
     }
 }
