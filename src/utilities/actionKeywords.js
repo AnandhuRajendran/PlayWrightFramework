@@ -81,7 +81,7 @@ class ActionKeywords {
 
   /*****************Wait Actions**************** */
 
-  async waitForLocator(locator) {
+  async waitForVisible(locator) {
 
     await locator.waitFor({ state: 'visible' });
   }
