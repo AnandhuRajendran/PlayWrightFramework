@@ -16,7 +16,7 @@ test.beforeEach(async ({ page }) => {
 test("HomepageValidation", async ({page}) => {
 
 await loginPage.login(process.env.UNAME, process.env.PASSWORD);
-await action.waitForLocator(factory.search);
+await action.waitForVisible(factory.search);
 await action.fillText(factory.search, "Maintenance");
 await action.click(factory.Maintenance);
 await action.verifyText(factory.PurgeER, "Purge Employee Records");

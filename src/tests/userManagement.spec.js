@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 test("addUser", async({ page }) =>{
 
 await loginPage.login(process.env.UNAME, process.env.PASSWORD);
-await page.waitForSelector('text=admin');
+await page.waitForVisible('text=admin');
 await action.click(factory.adminMenu);
 await action.click(factory.addUser_btn);
 await action.selectFromCustomDDL(factory.userRole_ddl, factory.userRole_Admin);
