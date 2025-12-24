@@ -19,6 +19,7 @@ await loginPage.login(process.env.UNAME, process.env.PASSWORD);
 await action.waitForVisible(factory.search);
 await action.fillText(factory.search, "Maintenance");
 await action.click(factory.Maintenance);
+await page.pause();
 await action.verifyText(factory.PurgeER, "Purge Employee Records");
 await page.pause();
 

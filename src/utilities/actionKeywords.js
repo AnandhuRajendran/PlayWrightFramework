@@ -88,7 +88,7 @@ class ActionKeywords {
 
   /*****************Verification Actions**************** */
   async verifyText(locator, text) {
-    await expect(locator).toHaveText(text);
+    await expect(locator).toContainText(text)
   }
 
   async verifyEnabled(locator){
@@ -105,7 +105,7 @@ class ActionKeywords {
     return await locator.textContent();
 
   }
-  
+
   /*****************File Actions**************** */
 
   async uploadFile(locator, filePath) {

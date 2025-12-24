@@ -26,6 +26,14 @@ class pageFactory {
         this.userStatus_Enabled= this.page.locator("div.oxd-select-dropdown >> text=Enabled");
         this.employeeName_txt= this.page.getByPlaceholder("Type for hints...");
 
+    //My Info
+
+        this.myInfoMenu= this.page.locator('//span[normalize-space()="My Info"]')
+        this.personalDetails= this.page.locator('//*[@class="orangehrm-tabs-item --active"]')
+        this.middleName= this.page.getByPlaceholder("Middle Name");
+        this.saveReq_btn= this.page.locator('//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//button[@type="submit"][normalize-space()="Save"]');
+
+
         
 
         
