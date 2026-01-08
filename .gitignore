@@ -5,6 +5,7 @@ playwright-report/
 blob-report/
 playwright/.cache/
 src/config/.env
+src/tests/dummytest.spec.js
 
 # Optional: ignore example logs
 *.log

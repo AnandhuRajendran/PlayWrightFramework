@@ -12,6 +12,6 @@ await page.pause();
 await page.locator("//*[@class='gLFyf']").fill("Automation");
 await page.keyboard.press("Enter");
 
-await page.pause();
+
 
 });
