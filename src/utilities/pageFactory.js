@@ -33,7 +33,9 @@ class pageFactory {
         this.middleName= this.page.getByPlaceholder("Middle Name");
         this.saveReq_btn= this.page.locator('//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//button[@type="submit"][normalize-space()="Save"]');
 
-
+    //Performance
+    this.performanceMenu= this.page.getByText("Performance"); 
+    this.txt_EmployeeReviews= this.page.getByText("Employee Reviews");   
         
 
         
